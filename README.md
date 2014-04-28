@@ -44,8 +44,29 @@ A more thorough statistical analysis is to come.
 Two images and a JSON file is saved by running the test, into the tests folder:
 
 * the raw screenshot after two seconds of scrolling (`outCanvas.png`)
+  ![before the contours are traced](tests/outCanvas.png)
 * the screenshot with computer vision markup (`out_contour.png`)
-* the data JSON (data_hits.json)
+  ![before the contours are traced](tests/out_contour.png)
+* the data JSON (`data_hits.json`)
+```
+{
+   data: [
+    {
+      index: int, // the number of the surface found by matching the color to the colorlist json
+      color: [int x 4], // rgba
+      center: {x: float, y: float} // the average of all the points found by cv of the contour
+    } ... {}
+
+   ],
+   slope: float, // around 49
+   intercept: float // around 168
+}
+```
+note that the intercept is the "money value" here - it is the amount of scrolling that
+occurs in 2 seconds. slope of c: 49 is a validation that
+
+* the content surfaces are of normal size
+* that the opencv contour scan is working properly.
 
 ## Setup Requirements
 
