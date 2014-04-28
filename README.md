@@ -39,3 +39,51 @@ A few runs show that these numbers are consistent from test to test
 
 A more thorough statistical analysis is to come.
 
+## output
+
+Two images and a JSON file is saved by running the test, into the tests folder:
+
+* the raw screenshot after two seconds of scrolling (`outCanvas.png`)
+* the screenshot with computer vision markup (`out_contour.png`)
+* the data JSON (data_hits.json)
+
+## Setup Requirements
+
+A fair amount of software is required to run this test.
+
+1. ** Selenium Sserver with the Google Chrome plugin **
+
+The tests runs under selenium; both the selenium server and the chrome plugin is required.
+The webdriver is included in the `server` directory; however you might want to get both the server and the plugin
+yourself from the net as they are frequently updtaed to keep up with browser upgrades.
+
+`the server.sh` script will initialize the server.
+
+2. ** OpenCV **
+
+Installing openCV is a bit of a chore; I reccommend using Homebrew and calling `brew install opencv`
+
+3. ** Cairo **
+
+Cairo is required by node-canvas and is notoriously tempermental. `brew install cairo` may work for you but don't
+be surprised if it is troublesome to get working right. (I had to manually relink a lot of the components post install
+
+4. ** a bunch of node modules **
+
+the webdriver (wd), computer vision(opencv), node-canvas and a host of support modules are needed to reun the test
+
+5. ** grunt command line **
+
+See Grunt Docs for details -- enable the grunt command line runner.
+
+## Running the tests
+
+1. Run the Grunt task `grunt serve` to expose the main server on port 1337 ('L33T').
+
+2. run the node script `tests/scroll_test.js`.
+
+You should see the scroll page open and after a second or so, the "CLick to scroll" button disappears and the scroller
+starts scolling.
+
+Two seconds later the window closes and the post processes of the test updates the files listed in **output** above.
+
