@@ -1,0 +1,54 @@
+{
+  "name": "famousscrolltest",
+  "description": "Running webdriver tests for famous.",
+  "version": "0.1.0",
+  "homepage": "https://github.com/bingomanatee/famousscrolltest",
+  "author": {
+    "name": "Dave Edelhart",
+    "url": "http://github.com/bingomanatee/"
+  },
+  "license": "ISC",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/bingomanatee/famousscrolltest.git"
+  },
+  "bugs": {
+    "url": "https://github.com/bingomanatee/famousscrolltest/issues"
+  },
+  "engines": {
+    "node": ">= 0.10.0"
+  },
+  "devDependencies": {
+    "grunt": "~0.4.2",
+    "grunt-contrib-clean": "^0.5.0",
+    "grunt-contrib-connect": "^0.7.1",
+    "grunt-contrib-watch": "^0.6.1",
+    "grunt-contrib-copy": "^0.5.0",
+    "grunt-contrib-requirejs": "^0.4.3",
+    "grunt-contrib-htmlmin": "^0.2.0",
+    "grunt-contrib-concat": "^0.4.0",
+    "grunt-contrib-cssmin": "^0.9.0",
+    "grunt-contrib-uglify": "^0.4.0",
+    "grunt-rev": "^0.1.0",
+    "grunt-bower-requirejs": "^0.10.0",
+    "grunt-processhtml": "^0.3.0",
+    "grunt-usemin": "^2.1.0",
+    "grunt-eslint": "^0.4.0",
+    "grunt-jscs-checker": "^0.4.1",
+    "load-grunt-config": "^0.8.0-beta.1",
+    "time-grunt": "^0.3.1",
+    "famous-metrics": "0.0.4"
+  },
+  "scripts": {
+    "test": "grunt test"
+  },
+  "dependencies": {
+    "wd": "~0.2.19",
+    "cv": "0.0.3",
+    "opencv": "~0.5.0",
+    "lodash": "~2.4.1",
+    "node-easel": "~0.1.2",
+    "canvas": "~1.1.3",
+    "simple-statistics": "~0.8.0"
+  }
+}
