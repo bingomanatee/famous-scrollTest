@@ -48,6 +48,7 @@ Two images and a JSON file is saved by running the test, into the tests folder:
 * the screenshot with computer vision markup (`out_contour.png`)
   ![before the contours are traced](tests/out_contour.png)
 * the data JSON (`data_hits.json`)
+
 ```
 {
    data: [
@@ -67,6 +68,22 @@ occurs in 2 seconds. slope of c: 49 is a validation that
 
 * the content surfaces are of normal size
 * that the opencv contour scan is working properly.
+
+### Why CV?
+
+Most integration tests are concerned with application - centric results -- is a form value submitted, does a 
+banner read with the expected tests, does a page change when you click on the link. 
+
+These series of tests are very focused on visual results. Does the widget appear in the place that we want it to. 
+Does offset changes puth an element into the proper corner. Does reducing the friction increase the speed of scrolling. 
+
+Given the quirkiness of DOM / CSS interpertation, we are less focused here on whether the proper CSS flags/style flags
+are switched than, does said flipping of switches give us the visual result we expect. 
+
+OpenCV gives that data quite well. With allowance for a little bit of fudging CV will tell us if the appropriate surfaces
+are in the appropriate place at a given point in time. it will even give us some feedback as to depth, given that area has an inverse relationship with depth. Using sub-surface decorations we can even tell things about rotation and orientation. 
+
+The downside of course is that the debt for interperting test results is a bit higher. Long term this debt can be solved with remote service-based image/contour processing servers. 
 
 ## Setup Requirements
 
